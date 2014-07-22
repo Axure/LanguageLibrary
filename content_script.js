@@ -2,11 +2,19 @@
  * Created by zhenghu on 14 年 七月. 12..
  */
 
-function addWord_info() {
+function fetchWordInfo() {
 
-    var selection = document.getSelection();
+    var text = document.getSelection().toString();
 
-    var date = new Date();
+    var currentDate = new Date();
+//    var datetime = currentDate.getDate() + "/"
+//        + (currentDate.getMonth()+1)  + "/"
+//        + currentDate.getFullYear() + " @ "
+//        + currentDate.getHours() + ":"
+//        + currentDate.getMinutes() + ":"
+//        + currentDate.getSeconds();
+
+    var datetime = currentDate.toString();
 
     var url = window.location.href;
 
@@ -14,11 +22,11 @@ function addWord_info() {
 
     var language = "en";
 
-    var context;
+    var context = "hehe";
 
-    var info = {"selection":selection, "date":date, "url":url, "language": language, "context": context};
+    var infoArray = {"text":text, "datetime":datetime, "url":url, "language": language, "context": context};
 
-    console.log(info);
+    console.log(infoArray);
 
-    return info;
+    return infoArray;
 }
